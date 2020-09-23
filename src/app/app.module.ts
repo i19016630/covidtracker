@@ -3,16 +3,30 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { BarchartComponent } from './components/barchart/barchart.component';
+import { ChartsModule, ThemeService } from 'ng2-charts';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    BarchartComponent,
+ 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ChartsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ThemeService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
